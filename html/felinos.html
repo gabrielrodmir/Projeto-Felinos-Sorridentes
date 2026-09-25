@@ -1,0 +1,216 @@
+<!DOCTYPE html>
+<html lang="PT-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Felinos Sorridentes</title>
+    <link rel="stylesheet" href="../css/style.css">
+</head>
+<body>
+    <header>
+        <h1>Felinos Sorridentes</h1>
+
+        <nav>
+            <button class="menu-toggle" type="button" aria-label="Abrir Menu" aria-controls="nav-menu" aria-expanded="false">&#9776;</button>
+
+            <ul class="nav-menu" id="nav-menu">
+                <li><a class="nav-button" href="#/index">Início</a></li>
+
+                <li class="dropdown" aria-expanded="false">
+                    <button class="nav-button" type="button" aria-haspopup="true" aria-expanded="false">Projetos Sociais &#9662;</button>
+                    <ul class="dropdown-menu">
+                        <li><a href="#/castracao">Castração</a></li>
+                    </ul>
+                </li>
+
+                <li class="dropdown" aria-expanded="false">
+                    <button class="nav-button" type="button" aria-haspopup="true" aria-expanded="false">Quero Adotar &#9662;</button>
+                    <ul class="dropdown-menu">
+                        <li><a href="#/feira">Feira de Adoção</a></li>
+                    </ul>
+                </li>
+
+                <li><a class="nav-button" href="#/sobrenos">Sobre Nós</a></li>
+                <li><a class="nav-button" href="#/contato">Contato</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main class="layout-grid">
+        <h2 class="col-12">ONG Felinos Sorridentes: Transformando a vida de Gatos Resgatados</h2>
+
+        <section class="quem-somos col-3">
+            <h3>Quem Somos</h3>
+            <p>Somos uma organização sem fins lucrativos dedicada ao resgate, reabilitação, castração e adoção de gatos abandonados.</p>
+        </section>
+
+        <section class="projetos col-9">
+            <h3>Nossos Projetos Sociais</h3>
+            <article>
+                <h4>Projeto Resgate, Esterilização e Novo Lar</h4>
+                <span class="badge badge-info">Resgate e cuidado</span>
+
+                <picture>
+                <p>Nosso projeto visa resgatar e controlar a população de gatos comunitários através da castração e vacinação para que o felino consiga um novo lar.</p>
+                    <source srcset="../assets/img/gatinhos.png" type="image/png">
+                    <img class="imagem-png" src="../assets/img/gatinhos.webp" alt="Dois gatos filhotes dentro da caixa de transporte">
+                </picture>
+            </article>
+
+            <article>
+                <h4>Programa Adote um Bigode</h4>
+                <span class="badge badge-sucesso">Adoção responsável</span>
+                <p>Realizamos feiras semanais e campanhas online para conectar gatos reabilitados e vacinados a novas famílias.</p>
+            </article>
+
+            <article>
+                <h4>Como se Tornar um Voluntário</h4>
+                <p>Descubra como você pode contribuir com nossa causa e fazer a diferença na vida de gatos resgatados.</p>
+                <div class="alert alert-info" role="note">
+                    Preencha todos os campos corretamente para concluir seu cadastro.
+                </div>
+
+                <form action="#" method="post">
+                    <fieldset>
+                        <legend>Dados Pessoais</legend>
+
+                        <label for="nome">Nome Completo:</label>
+                        <input type="text" id="nome" name="nome" required>
+
+                        <label for="email">E-mail:</label>
+                        <input type="email" id="email" name="email" required>
+
+                        <label for="data-nasc">Data de Nascimento:</label>
+                        <input type="date" id="data-nasc" name="data-nasc" required>
+
+                        <label for="tel">Telefone:</label>
+                        <input type="tel" id="tel" name="tel" placeholder="(11) 99999-9999"
+                            pattern="\([0-9]{2}\) [0-9]{5}-[0-9]{4}" required>
+
+                        <label for="cpf">CPF:</label>
+                        <input type="text" id="cpf" name="cpf" placeholder="000.000.000-00"
+                            pattern="[0-9]{3}\.[0-9]{3}\.[0-9]{3}-[0-9]{2}" required>
+                    </fieldset>
+
+                    <fieldset>
+                        <legend>Endereço</legend>
+
+                        <label for="cep">CEP:</label>
+                        <input type="text" id="cep" name="cep" placeholder="00000-000"
+                            pattern="[0-9]{5}-[0-9]{3}" required>
+
+                        <label for="cidade">Cidade:</label>
+                        <input type="text" id="cidade" name="cidade" required>
+                    </fieldset>
+
+                    <button type="submit">Concluir Cadastro</button>
+                </form>
+            </article>
+        </section>
+    </main>
+
+    <footer>
+        <p>&copy; 2026 Felinos Sorridentes. Todos os direitos reservados.</p>
+        <p>Contato: contato@felinossorridentes.org | Telefone: (11) 1705-1705 | Doe qualquer valor via PIX: doe@felinossorridentes.org</p>
+    </footer>
+
+    <div class="toast" id="form-toast" role="status" aria-live="polite" hidden>
+        Cadastro realizado com sucesso!
+    </div>
+
+    <script src="https://unpkg.com/imask"></script>
+    <script type="module" src="../js/main.js"></script>
+    <script>
+        const menuToggle = document.querySelector('.menu-toggle');
+        const navMenu = document.querySelector('.nav-menu');
+
+        if (menuToggle && navMenu) {
+            menuToggle.addEventListener('click', () => {
+                navMenu.classList.toggle('open');
+                const isOpen = navMenu.classList.contains('open');
+                menuToggle.setAttribute('aria-expanded', isOpen ? 'true' : 'false');
+            });
+
+            menuToggle.addEventListener('keydown', (event) => {
+                if (event.key === 'Escape' && navMenu.classList.contains('open')) {
+                    navMenu.classList.remove('open');
+                    menuToggle.setAttribute('aria-expanded', 'false');
+                    menuToggle.focus();
+                }
+            });
+        }
+
+        const dropdowns = document.querySelectorAll('.dropdown');
+
+        const closeAllDropdowns = () => {
+            dropdowns.forEach((dropdown) => {
+                dropdown.classList.remove('open');
+                dropdown.setAttribute('aria-expanded', 'false');
+                const trigger = dropdown.querySelector('.nav-button');
+                if (trigger) trigger.setAttribute('aria-expanded', 'false');
+            });
+        };
+
+        dropdowns.forEach((dropdown) => {
+            const trigger = dropdown.querySelector('.nav-button');
+            if (!trigger) return;
+
+            const firstMenuLink = dropdown.querySelector('.dropdown-menu a');
+
+            const toggleDropdown = (event) => {
+                event.preventDefault();
+                const isOpen = dropdown.classList.contains('open');
+                closeAllDropdowns();
+
+                if (!isOpen) {
+                    dropdown.classList.add('open');
+                    dropdown.setAttribute('aria-expanded', 'true');
+                    trigger.setAttribute('aria-expanded', 'true');
+                    if (firstMenuLink) {
+                        setTimeout(() => firstMenuLink.focus(), 10);
+                    }
+                } else {
+                    trigger.focus();
+                }
+            };
+
+            trigger.addEventListener('click', toggleDropdown);
+
+            trigger.addEventListener('keydown', (event) => {
+                if (event.key === 'Enter' || event.key === ' ' || event.key === 'Spacebar') {
+                    toggleDropdown(event);
+                }
+
+                if (event.key === 'Escape') {
+                    closeAllDropdowns();
+                    trigger.focus();
+                }
+            });
+        });
+
+        document.addEventListener('click', (event) => {
+            if (!event.target.closest('.dropdown')) {
+                closeAllDropdowns();
+            }
+        });
+
+        document.addEventListener('keydown', (event) => {
+            if (event.key === 'Escape') {
+                const focusedDropdown = document.activeElement && document.activeElement.closest('.dropdown');
+                if (focusedDropdown) {
+                    focusedDropdown.classList.remove('open');
+                    focusedDropdown.setAttribute('aria-expanded', 'false');
+                    const trigger = focusedDropdown.querySelector('.nav-button');
+                    if (trigger) {
+                        trigger.setAttribute('aria-expanded', 'false');
+                        trigger.focus();
+                    }
+                    return;
+                }
+
+                closeAllDropdowns();
+            }
+        });
+    </script>
+</body>
+</html>
