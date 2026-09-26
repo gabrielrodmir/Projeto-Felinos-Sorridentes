@@ -3,7 +3,7 @@ export const listaGatos = [
 		nome: 'Ilya e Shane',
 		badge: 'Adoção Responsável',
 		descricao: 'Dois filhotes resgatados procurando um novo lar.',
-		imagemPng: '../assets/img/ilya-e-shane.png',
+		imagemPng: '../assets/img/ilya-e-shane.jpg',
 		imagemWebp: '../assets/img/ilya-e-shane.webp'
 	},
 	{
