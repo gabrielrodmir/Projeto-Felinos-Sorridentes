@@ -8,6 +8,9 @@
   --color-bg-card: #ffffff;       /* Branco para cards e formulários */
   --color-text-main: #333333;     /* Grafite para o texto principal */
   --color-border: #d8c4b0;        /* Tom de borda para formulários e inputs */
+  --color-btn-text: #2a1f18;
+  --color-danger: #d32f2f;
+  --color-success: #2e7d32;
 
   /* --- ESCALA TIPOGRÁFICA (5 Níveis) --- */
   --font-size-xs: 0.875rem; /* 14px - Rodapé e textos secundários */
@@ -22,6 +25,20 @@
   --spacing-md: 16px;  /* 16px */
   --spacing-lg: 20px;  /* 20px */
   --spacing-xl: 24px;  /* 24px */
+}
+
+html[data-theme="dark"] {
+    --color-primary: #263238;
+    --color-primary-dark: #172126;
+    --color-secondary: #e8935f;
+    --color-secondary-hover: #f0a877;
+    --color-bg-page: #121719;
+    --color-bg-card: #20282b;
+    --color-text-main: #f1f4f3;
+    --color-border: #465257;
+    --color-btn-text: #1b2529;
+    --color-danger: #ff8a80;
+    --color-success: #81c784;
 }
 
 * {
@@ -128,7 +145,7 @@ nav button.nav-button:hover {
   min-width: 200px;
   padding: 8px 0;
   list-style: none;
-  background-color: white;
+  background-color: var(--color-bg-card);
   border-radius: 8px;
   box-shadow: 0 8px 20px rgba(0, 0, 0, 0.12);
   z-index: 10;
@@ -148,14 +165,14 @@ nav button.nav-button:hover {
   padding: 10px 14px;
   color: var(--color-text-main);
   font-weight: normal;
-  background: white;
+  background: var(--color-bg-card);
   border: 0;
   border-radius: 0;
   box-shadow: none;
 }
 
 .dropdown-menu a:hover {
-  background-color: #f9efe8;
+  background-color: var(--color-bg-page);
   transform: none;
 }
 
@@ -205,7 +222,7 @@ article,
 form {
   margin: var(--spacing-lg) 0;
   padding: clamp(18px, 1.7vw, 24px);
-  background-color: rgba(255, 255, 255, 0.7);
+  background-color: var(--color-bg-card);
   border: 1px solid var(--color-border);
   border-radius: 10px;
 }
@@ -245,6 +262,8 @@ label {
 input {
   width: 100%;
   padding: 10px 12px;
+  color: var(--color-text-main);
+  background-color: var(--color-bg-card);
   border: 1px solid var(--color-border);
   border-radius: 6px;
   font-size: var(--font-size-sm);
@@ -253,7 +272,7 @@ input {
 
 button {
   padding: 10px var(--spacing-md);
-  color: white;
+  color: var(--color-btn-text);
   font-weight: bold;
   background-color: var(--color-secondary);
   border: 0;
@@ -289,13 +308,13 @@ input {
 
 input:user-valid,
 input.is-valid {
-  border-color: #2e7d32;
+  border-color: var(--color-success);
   box-shadow: 0 0 0 3px rgba(46, 125, 50, 0.12);
 }
 
 input:user-invalid,
 input.is-invalid {
-  border-color: #d32f2f;
+  border-color: var(--color-danger);
   box-shadow: 0 0 0 3px rgba(211, 47, 47, 0.1);
 }
 
@@ -308,11 +327,11 @@ input:placeholder-shown {
   min-height: 1.1em;
   margin-top: 6px;
   font-size: 0.75rem;
-  color: #d32f2f;
+  color: var(--color-danger);
 }
 
 .field-message.success {
-  color: #2e7d32;
+  color: var(--color-success);
 }
 
 .badge {
@@ -329,6 +348,7 @@ input:placeholder-shown {
 }
 
 .badge-info {
+  color: var(--color-btn-text);
   background-color: var(--color-secondary);
 }
 
@@ -441,7 +461,7 @@ footer p {
   .dropdown-menu a {
     width: 100%;
     color: var(--color-text-main);
-    background-color: rgba(255, 255, 255, 0.96);
+    background-color: var(--color-bg-card);
   }
 
   header,
