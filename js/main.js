@@ -3,6 +3,26 @@ import { configurarFormulario } from './modules.js/formHandler.js';
 import { apagarCadastro } from './modules.js/storage.js';
 import { criarRotas, normalizarRota } from './modules.js/router.js';
 
+const themeToggle = document.querySelector('#theme-toggle');
+const STORAGE_KEY_TEMA = 'temaEscolhido';
+
+if (themeToggle) {
+  function aplicarTema(tema) {
+    const temaAtual = tema === 'dark' ? 'dark' : 'light';
+    document.documentElement.setAttribute('data-theme', temaAtual);
+    themeToggle.setAttribute('aria-pressed', temaAtual === 'dark' ? 'true' : 'false');
+    themeToggle.textContent = temaAtual === 'dark' ? '☀️ Modo claro' : '🌙 Modo escuro';
+  }
+
+  aplicarTema(localStorage.getItem(STORAGE_KEY_TEMA) || 'light');
+
+  themeToggle.addEventListener('click', () => {
+    const novoTema = document.documentElement.getAttribute('data-theme') === 'dark' ? 'light' : 'dark';
+    localStorage.setItem(STORAGE_KEY_TEMA, novoTema);
+    aplicarTema(novoTema);
+  });
+}
+
 const initialContent = document.querySelector('main.layout-grid')?.innerHTML || '';
 
 window.apagarCadastro = () => {
