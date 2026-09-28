@@ -27,10 +27,7 @@ const initialContent = document.querySelector('main.layout-grid')?.innerHTML || 
 
 window.apagarCadastro = () => {
   apagarCadastro();
-  console.log('Cadastro apagado do localStorage.');
 };
-
-console.log('main.js carregado.');
 
 const routes = criarRotas(initialContent, gerarCardsGatos);
 
