@@ -3,8 +3,8 @@ export const listaGatos = [
 		nome: 'Ilya e Shane',
 		badge: 'Adoção Responsável',
 		descricao: 'Dois filhotes resgatados procurando um novo lar.',
-		imagemFallback: '/img/ilya-e-shane.jpg',
-		imagemWebp: '/img/ilya-e-shane.webp',
+		imagemFallback: `${import.meta.env.BASE_URL}img/ilya-e-shane.jpg`,
+		imagemWebp: `${import.meta.env.BASE_URL}img/ilya-e-shane.webp`,
 		larguraImagem: 800,
 		alturaImagem: 1067
 	},
@@ -12,8 +12,8 @@ export const listaGatos = [
 		nome: 'Frajolinha',
 		badge: 'Reabilitado',
 		descricao: 'Gatinho carinhoso, castrado e pronto para a sua nova família.',
-		imagemFallback: '/img/frajolinha.jpeg',
-		imagemWebp: '/img/frajolinha.webp',
+		imagemFallback: `${import.meta.env.BASE_URL}img/frajolinha.jpeg`,
+		imagemWebp: `${import.meta.env.BASE_URL}img/frajolinha.webp`,
 		larguraImagem: 826,
 		alturaImagem: 1024
 	}

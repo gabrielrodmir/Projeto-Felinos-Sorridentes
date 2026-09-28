@@ -11,16 +11,16 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/gabrielrodmir/Projeto-Felinos-Sorridentes.git"
+    "url": "git+https://github.com/gabrielrodmir/felinossorridentes.git"
   },
   "keywords": [],
   "author": "",
   "license": "ISC",
   "type": "module",
   "bugs": {
-    "url": "https://github.com/gabrielrodmir/Projeto-Felinos-Sorridentes/issues"
+    "url": "https://github.com/gabrielrodmir/felinossorridentes/issues"
   },
-  "homepage": "https://github.com/gabrielrodmir/Projeto-Felinos-Sorridentes#readme",
+  "homepage": "https://github.com/gabrielrodmir/felinossorridentes#readme",
   "devDependencies": {
     "vite": "^8.3.1"
   }
