@@ -9,6 +9,8 @@
   --color-text-main: #333333;     /* Grafite para o texto principal */
   --color-border: #d8c4b0;        /* Tom de borda para formulários e inputs */
   --color-btn-text: #2a1f18;
+  --color-link: #005ea8;
+  --color-link-hover: #004b87;
   --color-danger: #d32f2f;
   --color-success: #2e7d32;
 
@@ -37,6 +39,8 @@ html[data-theme="dark"] {
     --color-text-main: #f1f4f3;
     --color-border: #465257;
     --color-btn-text: #1b2529;
+    --color-link: #8ab4f8;
+    --color-link-hover: #c2d8ff;
     --color-danger: #ff8a80;
     --color-success: #81c784;
 }
@@ -52,6 +56,14 @@ body {
   color: var(--color-text-main);
   background-color: var(--color-bg-page);
   font-size: var(--font-size-sm);
+}
+
+a {
+  color: var(--color-link);
+}
+
+a:hover {
+  color: var(--color-link-hover);
 }
 
 header,
@@ -193,12 +205,22 @@ nav button.nav-button:hover {
 .layout-grid {
   display: grid;
   grid-template-columns: repeat(12, minmax(0, 1fr));
-  gap: 24px;
+  column-gap: 24px;
+  row-gap: 12px;
   width: min(1100px, 92%);
   margin: 40px auto;
 }
 
 .layout-grid > h2 {
+  grid-column: 1 / -1;
+  margin: 0;
+}
+
+.layout-grid > p {
+  margin: 0;
+}
+
+.col-12 {
   grid-column: 1 / -1;
 }
 
@@ -211,7 +233,7 @@ nav button.nav-button:hover {
 }
 
 section {
-  margin: var(--spacing-lg) 0;
+  margin: var(--spacing-sm) 0;
   padding: clamp(20px, 2vw, 28px);
   background-color: var(--color-bg-card);
   border-radius: 12px;
@@ -220,7 +242,7 @@ section {
 
 article,
 form {
-  margin: var(--spacing-lg) 0;
+  margin: var(--spacing-sm) 0;
   padding: clamp(18px, 1.7vw, 24px);
   background-color: var(--color-bg-card);
   border: 1px solid var(--color-border);
@@ -228,12 +250,17 @@ form {
 }
 
 svg,
-.imagem-png {
+.imagem-gato {
   display: block;
   width: min(100%, 400px);
   height: auto;
   margin: var(--spacing-md) auto;
   border-radius: 15px;
+}
+
+.card-gato .imagem-gato {
+  aspect-ratio: 4 / 3;
+  object-fit: cover;
 }
 
 form {
