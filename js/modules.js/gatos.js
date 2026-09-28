@@ -3,15 +3,19 @@ export const listaGatos = [
 		nome: 'Ilya e Shane',
 		badge: 'Adoção Responsável',
 		descricao: 'Dois filhotes resgatados procurando um novo lar.',
-		imagemPng: '../assets/img/ilya-e-shane.png',
-		imagemWebp: '../assets/img/ilya-e-shane.webp'
+		imagemFallback: '/img/ilya-e-shane.jpg',
+		imagemWebp: '/img/ilya-e-shane.webp',
+		larguraImagem: 800,
+		alturaImagem: 1067
 	},
 	{
 		nome: 'Frajolinha',
 		badge: 'Reabilitado',
 		descricao: 'Gatinho carinhoso, castrado e pronto para a sua nova família.',
-		imagemPng: '../assets/img/frajolinha.jpeg',
-		imagemWebp: '../assets/img/frajolinha.webp'
+		imagemFallback: '/img/frajolinha.jpeg',
+		imagemWebp: '/img/frajolinha.webp',
+		larguraImagem: 826,
+		alturaImagem: 1024
 	}
 ];
 
@@ -22,7 +26,7 @@ export function gerarCardsGatos() {
 			<span class="badge badge-sucesso">${gato.badge}</span>
 			<picture>
 				<source srcset="${gato.imagemWebp}" type="image/webp">
-				<img src="${gato.imagemPng}" alt="${gato.nome}" class="imagem-png">
+				<img src="${gato.imagemFallback}" alt="${gato.nome}" class="imagem-gato" width="${gato.larguraImagem}" height="${gato.alturaImagem}" loading="lazy">
 			</picture>
 			<p>${gato.descricao}</p>
 			<button type="button" class="btn-adotar">Quero Adotar</button>

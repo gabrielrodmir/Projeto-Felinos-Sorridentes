@@ -4,11 +4,12 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Felinos Sorridentes</title>
-    <link rel="stylesheet" href="../css/style.css">
+    <link rel="stylesheet" href="/css/style.css">
 </head>
 <body>
     <header>
         <h1>Felinos Sorridentes</h1>
+        <button id="theme-toggle" type="button" aria-label="Alternar tema claro e escuro" aria-pressed="false">🌙 Modo escuro</button>
 
         <nav>
             <button class="menu-toggle" type="button" aria-label="Abrir Menu" aria-controls="nav-menu" aria-expanded="false">&#9776;</button>
@@ -49,11 +50,12 @@
             <article>
                 <h4>Projeto Resgate, Esterilização e Novo Lar</h4>
                 <span class="badge badge-info">Resgate e cuidado</span>
-
-                <picture>
                 <p>Nosso projeto visa resgatar e controlar a população de gatos comunitários através da castração e vacinação para que o felino consiga um novo lar.</p>
-                    <source srcset="../assets/img/gatinhos.png" type="image/png">
-                    <img class="imagem-png" src="../assets/img/gatinhos.webp" alt="Dois gatos filhotes dentro da caixa de transporte">
+                <picture>
+                    <source srcset="/img/gatinhos.webp" type="image/webp">
+                    <img class="imagem-gato" src="/img/gatinhos.jpg"
+                         alt="Dois gatos filhotes dentro da caixa de transporte"
+                        width="984" height="1076" loading="lazy">
                 </picture>
             </article>
 
@@ -119,7 +121,7 @@
     </div>
 
     <script src="https://unpkg.com/imask"></script>
-    <script type="module" src="../js/main.js"></script>
+    <script type="module" src="/js/main.js"></script>
     <script>
         const menuToggle = document.querySelector('.menu-toggle');
         const navMenu = document.querySelector('.nav-menu');

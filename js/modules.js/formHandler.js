@@ -67,9 +67,6 @@ export function configurarFormulario() {
 			const input = form.elements.namedItem(campo);
 			if (input) input.value = valor;
 		});
-		console.log('Somente os dados básicos foram carregados:', cadastro);
-	} else {
-		console.log('Nenhum cadastro salvo no localStorage.');
 	}
 
 	form.addEventListener('submit', (event) => {
@@ -83,8 +80,7 @@ export function configurarFormulario() {
 			return;
 		}
 
-		const dadosCadastro = salvarCadastro(form);
-		console.log('Somente os dados básicos foram salvos:', dadosCadastro);
+		salvarCadastro(form);
 
 		const toast = document.querySelector('#form-toast');
 		if (toast) {
